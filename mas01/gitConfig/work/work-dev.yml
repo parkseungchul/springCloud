@@ -1,0 +1,3 @@
+service:
+  name: work
+  local: dev-github
