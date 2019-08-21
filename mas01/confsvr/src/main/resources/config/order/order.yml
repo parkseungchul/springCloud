@@ -1,0 +1,3 @@
+service:
+  name: order
+  local: default-local

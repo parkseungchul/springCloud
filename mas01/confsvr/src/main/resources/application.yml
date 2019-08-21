@@ -1,0 +1,22 @@
+# github spring config
+#server:
+#  port: 8888
+#spring:
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: https://github.com/parkseungchul/springCloud
+#          searchPaths: mas01/gitConfig/order, mas01/gitConfig/work
+
+# local file spring config
+server:
+  port: 8888
+spring:
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          searchLocations: classpath:config/order, classpath:config/work
