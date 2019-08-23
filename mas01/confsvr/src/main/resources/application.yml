@@ -20,3 +20,5 @@ spring:
       server:
         native:
           searchLocations: classpath:config/order, classpath:config/work
+        encrypt:
+          enabled: false
