@@ -12,12 +12,8 @@
     <groupId>com.psc.cloud</groupId>
     <artifactId>confsvr</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>confsvr</name>
-    <description>Demo project for Spring Boot</description>
-
-
-
-
+    <name>Configuration Server</name>
+    <description>Configuration Server</description>
 
     <properties>
         <java.version>1.8</java.version>
