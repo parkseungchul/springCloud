@@ -22,6 +22,11 @@
 - https://coe.gitbook.io/guide/config/springcloudconfig 를 참고하여 서버 재기동 없이 변수 변경
 - 환경변수에 @RefreshScope, @JsonSerialize(as=ServerConfig.class) 정의되어야 실시간 변수 변경을 할수 있음
 
+8/25
+- eureka sever set up
+  - ui: http://localhost:8889
+  - info : http://localhost:8889/eureka/apps
+  
 
 # case 환경 변수 전파 
 1. 스프링 컴피그의 설정이 변경 actuator 확인 (재기동)
