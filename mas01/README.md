@@ -18,7 +18,7 @@
 - bootstrap.xml > application.yml 이 먼저 적용
 - http://blog.leekyoungil.com/?p=352 참고
 
-8/23
+8/23 
 - https://coe.gitbook.io/guide/config/springcloudconfig 를 참고하여 서버 재기동 없이 변수 변경
 - 환경변수에 @RefreshScope, @JsonSerialize(as=ServerConfig.class) 정의되어야 실시간 변수 변경을 할수 있음
 
