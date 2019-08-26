@@ -18,7 +18,7 @@ public class ServerConfig{
     @Value("${spring.profiles.active}")
     private String profilesActive;
 
-    // 바라봐야 하는 서비스(어플리케이션 이름 없는 경우 default)
+    // 바라봐야 하는 서비스(어플리케이션 이름)
     @Value("${spring.application.name}")
     private String appName;
 
