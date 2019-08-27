@@ -1,5 +1,7 @@
 package com.psc.cloud.order.controller.api;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import com.psc.cloud.order.clients.WorkClient;
 import com.psc.cloud.order.config.ServerConfig;
 import lombok.extern.slf4j.Slf4j;
@@ -26,5 +28,25 @@ public class ConfigController {
             return workClient.getServerConfg();
         }
         return serverConfig;
+    }
+
+    @HystrixCommand(fallbackMethod = "circuitBreakerFallback", commandProperties = {
+            @HystrixProperty(name="execution.isolation.thread.timeoutInMilliseconds", value = "5000")
+    })
+    @GetMapping("/circuitBreaker/{time}")
+    public String circuitBreaker(@PathVariable("time") String time) throws Exception{
+
+        int ntime = Integer.parseInt(time);
+
+        try{
+            Thread.sleep(ntime * 1000);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+        return "circuitBreaker";
+    }
+
+    public String circuitBreakerFallback(String time){
+        return "fallback";
     }
 }
