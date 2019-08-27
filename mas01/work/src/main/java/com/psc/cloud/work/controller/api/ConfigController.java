@@ -1,5 +1,6 @@
 package com.psc.cloud.work.controller.api;
 
+import com.netflix.ribbon.proxy.annotation.Hystrix;
 import com.psc.cloud.work.clients.OrderClient;
 import com.psc.cloud.work.config.ServerConfig;
 import lombok.extern.slf4j.Slf4j;
@@ -26,5 +27,16 @@ public class ConfigController {
             return orderClient.getServerConfg();
         }
         return serverConfig;
+    }
+
+    @GetMapping("/circuitBreaker")
+    public String circuitBreaker() throws Exception{
+
+        try{
+            Thread.sleep(5000);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+        return "circuitBreaker";
     }
 }
