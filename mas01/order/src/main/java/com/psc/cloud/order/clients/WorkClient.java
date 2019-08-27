@@ -10,7 +10,7 @@ public interface WorkClient {
 
     @RequestMapping(
             method = RequestMethod.GET,
-            value = "/api/svrConf",
+            value = "/api/svrConf/work",
             consumes = "application/json")
     ServerConfig getServerConfg();
 }

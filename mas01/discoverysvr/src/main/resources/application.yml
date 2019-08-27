@@ -7,5 +7,4 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8889/eureka/
   server:
-#    waitTimeInMsWhenSyncEmpty: 5
-    enableSelfPreservation: false
+    waitTimeInMsWhenSyncEmpty: 5

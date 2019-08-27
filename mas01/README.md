@@ -8,8 +8,9 @@
   - order application
   - http://localhost:8080/actuator/refresh 이용하여 환경변수 재로딩
     
-- work 
+- work (http://localhost:8081)
   - application work     
+  - http://localhost:8081/actuator/refresh 이용하여 환경변수 재로딩  
   
   
 # 실수했던 것들과 기억해야 될 것들
@@ -20,12 +21,20 @@
 
 8/23 
 - https://coe.gitbook.io/guide/config/springcloudconfig 를 참고하여 서버 재기동 없이 변수 변경
-- 환경변수에 @RefreshScope, @JsonSerialize(as=ServerConfig.class) 정의되어야 실시간 변수 변경을 할수 있음
+- 대상에 @RefreshScope, @JsonSerialize(as=ServerConfig.class) 정의되어야 실시간 변수 변경을 할수 있음
+
 
 8/25
 - eureka sever set up
   - ui: http://localhost:8889
   - info : http://localhost:8889/eureka/apps
+
+8/26
+- eureka feign setup (유레카를 통한 서비스 콜)
+  - order(local): http://localhost:8080/api/svrConf/order
+  - order(remote): http://localhost:8080/api/svrConf/work
+  - work(local): http://localhost:8081/api/svrConf/work
+  - work(remote): http://localhost:8081/api/svrConf/order
   
 
 # case 환경 변수 전파 

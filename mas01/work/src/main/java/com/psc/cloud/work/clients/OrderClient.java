@@ -10,7 +10,7 @@ public interface OrderClient {
 
     @RequestMapping(
             method = RequestMethod.GET,
-            value = "/api/svrConf",
+            value = "/api/svrConf/order",
             consumes = "application/json")
     ServerConfig getServerConfg();
 }
