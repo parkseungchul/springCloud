@@ -51,7 +51,7 @@
   - work: http://localhost:8081/api/circuitBreaker/6 circuit breaker  
   
 8/29
-- Hystrix
+- Hystrix thread pool detail configuration
   - http://woowabros.github.io/experience/2017/08/21/hystrix-tunning.html  
 
   
