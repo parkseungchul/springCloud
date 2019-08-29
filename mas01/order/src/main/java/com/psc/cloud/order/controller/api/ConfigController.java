@@ -30,9 +30,17 @@ public class ConfigController {
         return serverConfig;
     }
 
-    @HystrixCommand(fallbackMethod = "circuitBreakerFallback", commandProperties = {
+    @HystrixCommand(
+            fallbackMethod = "circuitBreakerFallback",
+            commandProperties = {
             @HystrixProperty(name="execution.isolation.thread.timeoutInMilliseconds", value = "5000")
-    })
+            },
+            threadPoolKey = "circuitPool",
+            threadPoolProperties = {
+            @HystrixProperty(name="coreSize", value= "30"),
+            @HystrixProperty(name="maxQueueSize", value = "10")
+            }
+     )
     @GetMapping("/circuitBreaker/{time}")
     public String circuitBreaker(@PathVariable("time") String time) throws Exception{
 

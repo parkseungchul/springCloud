@@ -20,6 +20,7 @@
   - work: http://localhost:8081/api/circuitBreaker/1 success
   - work: http://localhost:8081/api/circuitBreaker/6 circuit breaker  
   
+  
 # 실수했던 것들과 기억해야 될 것들
 8/22
 - pom.xml 에 dependencyManagement -> spring-cloud-dependencies 추가해줘야 Fetching config from server at : http://localhost:8888 메시지와 함께 컴피그를 바라봄  
@@ -48,6 +49,11 @@
   - order: http://localhost:8080/api/circuitBreaker/6 fallback
   - work: http://localhost:8081/api/circuitBreaker/1 success
   - work: http://localhost:8081/api/circuitBreaker/6 circuit breaker  
+  
+8/29
+- Hystrix
+  - http://woowabros.github.io/experience/2017/08/21/hystrix-tunning.html  
+
   
 # case 환경 변수 전파 
 1. 스프링 컴피그의 설정이 변경 actuator 확인 (재기동)
