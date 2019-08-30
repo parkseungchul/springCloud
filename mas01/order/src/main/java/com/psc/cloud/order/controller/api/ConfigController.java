@@ -22,6 +22,11 @@ public class ConfigController {
     @Autowired
     private WorkClient workClient;
 
+    @GetMapping("")
+    public String index(){
+        return "hello order";
+    }
+
     @GetMapping("/svrConf/{appName}")
     public ServerConfig getServerConfig(@PathVariable("appName") String appName){
         if(appName.equals("work")){
@@ -57,4 +62,6 @@ public class ConfigController {
     public String circuitBreakerFallback(String time){
         return "fallback";
     }
+
+
 }
