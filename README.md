@@ -10,3 +10,7 @@
 ## halibat list
 
 - [mas01](https://github.com/parkseungchul/springCloud/tree/master/mas01)
+  - spring config
+  - eureka 
+  - Hystrix feign, fallback
+  - zuul
