@@ -1,24 +1,37 @@
 # server list
 
-- confsvr (http://localhost:8888)
-  - config server
+- Config Server (http://localhost:8888)
+  - base spring config
   - spring config : github, local file
+  
+- Discovery Server (http://localhost:8889)
+  - base eureka
+  - http://localhost:8889
+  - http://localhost:8889/eureka/apps
+
+- API Gateway (http://localhost:8890)  
+  - base zuul
+  - http://localhost:8890/actuator/routes
+  - http://localhost:8890/order/api/svrConf/order (gateway -> order)
+  - http://localhost:8890/order/api/svrConf/work (gateway -> order -> work)
+  - http://localhost:8890/work/api/svrConf/work (gateway -> work)
+  - http://localhost:8890/work/api/svrConf/order (gateway -> work -> order)
    
-- order (http://localhost:8080)
+- Application (http://localhost:8080)
   - order application
-  - http://localhost:8080/actuator/refresh 이용하여 환경변수 재로딩
-  - order(local): http://localhost:8080/api/svrConf/order
-  - order(remote): http://localhost:8080/api/svrConf/work
-  - order: http://localhost:8080/api/circuitBreaker/1 success
-  - order: http://localhost:8080/api/circuitBreaker/6 fallback
+  - http://localhost:8080/actuator/refresh  환경변수 재로딩
+  - order(local): http://localhost:8080/api/svrConf/order (로컬 변수)
+  - order(remote): http://localhost:8080/api/svrConf/work (리모트 변수 @FeignClient)
+  - order: http://localhost:8080/api/circuitBreaker/1 success  ( @HystrixCommand )
+  - order: http://localhost:8080/api/circuitBreaker/6 fallback ( @HystrixCommand )
       
-- work (http://localhost:8081)
+- Application (http://localhost:8081)
   - application work     
-  - http://localhost:8081/actuator/refresh 이용하여 환경변수 재로딩  
-  - work(local): http://localhost:8081/api/svrConf/work
-  - work(remote): http://localhost:8081/api/svrConf/order  
-  - work: http://localhost:8081/api/circuitBreaker/1 success
-  - work: http://localhost:8081/api/circuitBreaker/6 circuit breaker  
+  - http://localhost:8081/actuator/refresh  환경변수 재로딩  
+  - work(local): http://localhost:8081/api/svrConf/work (로컬변수)
+  - work(remote): http://localhost:8081/api/svrConf/order (리모트 변수 @FeignClient)
+  - work: http://localhost:8081/api/circuitBreaker/1 success ( @HystrixCommand )
+  - work: http://localhost:8081/api/circuitBreaker/6 circuit breaker ( @HystrixCommand )
   
   
 # 실수했던 것들과 기억해야 될 것들
@@ -54,6 +67,11 @@
 - Hystrix thread pool detail configuration
   - http://woowabros.github.io/experience/2017/08/21/hystrix-tunning.html  
 
+
+8/31
+- zuul server 구현
+  - zuul sever 도 결국 eureka client 일원임!
+
   
 # case 환경 변수 전파 
 1. 스프링 컴피그의 설정이 변경 actuator 확인 (재기동)
@@ -69,7 +87,5 @@
 8/23
 - 컴피그 서버가 재기동 없이 변수를 어떻게 변경하나요?
 
-# 쓰잘데기 없는 개발 모음 아이디어
-- 사용자 정의 변수가 맘대로 변경이 된다면... 해보고 싶은 삽질들이 많다.
-- 예를 들어 특정 거래 인터셉터에 차단을 하는 사용자 정의 변수를 넣어두고... 다이나믹하게 거래 제어
-- 로그도 다이나믹하게 변경하게 할수도 있고.. 
+8/31
+- 전체 서비스에 대하여 이중화 해야지... 휴
