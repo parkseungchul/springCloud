@@ -1,6 +1,12 @@
 spring:
   application:
     name: svcgate
+  profiles:
+    active: default
+  cloud:
+    config:
+      uri: http://localhost:8888
+      enabled: true
 server:
   port: 8890
 management:

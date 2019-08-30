@@ -8,3 +8,9 @@ eureka:
       defaultZone: http://localhost:8889/eureka/
     healthcheck:
       enabled: true
+zuul:
+  ignored-services: '*'
+  prefix: /
+  routes:
+    order: /order/**
+    work: /work/**
