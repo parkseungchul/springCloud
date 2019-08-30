@@ -16,6 +16,9 @@
   - http://localhost:8890/order/api/svrConf/work (gateway -> order -> work)
   - http://localhost:8890/work/api/svrConf/work (gateway -> work)
   - http://localhost:8890/work/api/svrConf/order (gateway -> work -> order)
+  - 컴피그 서버 변경 svcgate.yml -> prefix: / => prefix: /loc
+    - http://localhost:8890/actuator/refresh (변경 변수 적용)
+    - http://localhost:8890/loc/order/api (변경된 경로 호출)
    
 - Application (http://localhost:8080)
   - order application
@@ -71,6 +74,8 @@
 8/31
 - zuul server 구현
   - zuul sever 도 결국 eureka client 일원임!
+  - zuul config -> spring config 에 이관
+    - spring config server 설정 변경한 이후에 동적 변경 확인
 
   
 # case 환경 변수 전파 
