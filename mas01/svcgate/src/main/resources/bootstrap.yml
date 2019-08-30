@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: svcgate
+server:
+  port: 8890
+management:
+  health:
+    diskspace:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
