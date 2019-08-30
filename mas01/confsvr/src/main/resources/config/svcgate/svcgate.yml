@@ -1,0 +1,6 @@
+zuul:
+  ignored-services: '*'
+  prefix: /
+  routes:
+    order: /order/**
+    work: /work/**
