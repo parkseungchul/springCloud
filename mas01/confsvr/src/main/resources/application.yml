@@ -19,6 +19,6 @@ spring:
     config:
       server:
         native:
-          searchLocations: classpath:config/order, classpath:config/work
+          searchLocations: classpath:config/order, classpath:config/work, classpath:config/svcgate
         encrypt:
           enabled: false
