@@ -23,16 +23,16 @@ public class ConfigController {
     private WorkClient workClient;
 
     @GetMapping("")
-    public String index(){
-        return "hello order";
+    public ServerConfig index(){
+        return serverConfig;
     }
 
     @GetMapping("/svrConf/{appName}")
     public ServerConfig getServerConfig(@PathVariable("appName") String appName){
         if(appName.equals("work")){
-            serverConfig = workClient.getServerConfg();
-            serverConfig.setLocal("remote");
-            return serverConfig;
+            ServerConfig serverConfig2 = workClient.getServerConfg();
+            serverConfig2.setLocal("remote");
+            return serverConfig2;
         }
         serverConfig.setLocal("local");
         return serverConfig;
