@@ -14,6 +14,8 @@ import org.springframework.stereotype.Component;
 @JsonSerialize(as=ServerConfig.class)
 public class ServerConfig {
 
+    private String local;
+
     // 활성화 된 프로파일 이름
     @Value("${spring.profiles.active}")
     private String profilesActive;
