@@ -14,3 +14,15 @@ zuul:
   routes:
     order: /order/**
     work: /work/**
+hystrix:
+  command:
+    order:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
+    work:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000

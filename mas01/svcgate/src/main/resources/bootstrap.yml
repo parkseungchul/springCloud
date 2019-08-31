@@ -8,7 +8,7 @@ spring:
       uri: http://localhost:8888
       enabled: true
 server:
-  port: 8890
+  port: 8880
 management:
   health:
     diskspace:
