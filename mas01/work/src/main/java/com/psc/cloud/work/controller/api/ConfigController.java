@@ -21,12 +21,17 @@ public class ConfigController {
     @Autowired
     private OrderClient orderClient;
 
+    @GetMapping("")
+    public ServerConfig index(){
+        return serverConfig;
+    }
+
     @GetMapping("/svrConf/{appName}")
     public ServerConfig getServerConfig(@PathVariable("appName") String appName){
         if(appName.equals("order")){
-            serverConfig = orderClient.getServerConfg();
-            serverConfig.setLocal("remote");
-            return serverConfig;
+            ServerConfig serverConfig2 = orderClient.getServerConfg();
+            serverConfig2.setLocal("remote");
+            return serverConfig2;
         }
         serverConfig.setLocal("local");
         return serverConfig;
