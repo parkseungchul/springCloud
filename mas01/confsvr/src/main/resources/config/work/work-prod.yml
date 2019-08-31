@@ -1,3 +1,3 @@
 service:
   name: work
-  local: prod
+  local: prod-confsvr

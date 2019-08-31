@@ -1,3 +1,3 @@
 service:
   name: work
-  local: default
+  local: default-confsvr
