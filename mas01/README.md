@@ -9,18 +9,18 @@
   - http://localhost:8889
   - http://localhost:8889/eureka/apps
 
-- API Gateway (http://localhost:8890)  
+- API Gateway (http://localhost:8880)  
   - base zuul
-  - http://localhost:8890/actuator/routes
-  - http://localhost:8890/order/api/svrConf/order (gateway -> order)
-  - http://localhost:8890/order/api/svrConf/work (gateway -> order -> work)
-  - http://localhost:8890/work/api/svrConf/work (gateway -> work)
-  - http://localhost:8890/work/api/svrConf/order (gateway -> work -> order)
+  - http://localhost:8880/actuator/routes
+  - http://localhost:8880/order/api/svrConf/order (gateway -> order)
+  - http://localhost:8880/order/api/svrConf/work (gateway -> order -> work)
+  - http://localhost:8880/work/api/svrConf/work (gateway -> work)
+  - http://localhost:8880/work/api/svrConf/order (gateway -> work -> order)
   - 컴피그 서버 변경 svcgate.yml -> prefix: / => prefix: /loc
-    - http://localhost:8890/actuator/refresh (변경 변수 적용)
-    - http://localhost:8890/loc/order/api (변경된 경로 호출)
+    - http://localhost:8880/actuator/refresh (변경 변수 적용)
+    - http://localhost:8880/loc/order/api (변경된 경로 호출)
    
-- Application (http://localhost:8080)
+- Application (http://localhost:8080 / 8090 )
   - order application
   - http://localhost:8080/actuator/refresh  환경변수 재로딩
   - order(local): http://localhost:8080/api/svrConf/order (로컬 변수)
@@ -28,7 +28,7 @@
   - order: http://localhost:8080/api/circuitBreaker/1 success  ( @HystrixCommand )
   - order: http://localhost:8080/api/circuitBreaker/6 fallback ( @HystrixCommand )
       
-- Application (http://localhost:8081)
+- Application (http://localhost:8081 8081 / 8091 )
   - application work     
   - http://localhost:8081/actuator/refresh  환경변수 재로딩  
   - work(local): http://localhost:8081/api/svrConf/work (로컬변수)
@@ -77,6 +77,14 @@
   - zuul config -> spring config 에 이관
     - spring config server 설정 변경한 이후에 동적 변경 확인
 
+- 어플리케이션 이중 구성
+  - order < docker < loc 
+    - order8080.sh 
+    - order8090.sh   
+  - work < docker < loc
+    - work8081.sh
+    - work8081.sh   
+
   
 # case 환경 변수 전파 
 1. 스프링 컴피그의 설정이 변경 actuator 확인 (재기동)
@@ -94,3 +102,7 @@
 
 8/31
 - 전체 서비스에 대하여 이중화 해야지... 휴
+
+
+reference
+ - https://www.baeldung.com/spring-boot-change-port
