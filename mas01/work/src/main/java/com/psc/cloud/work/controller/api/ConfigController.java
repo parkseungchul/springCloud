@@ -24,8 +24,11 @@ public class ConfigController {
     @GetMapping("/svrConf/{appName}")
     public ServerConfig getServerConfig(@PathVariable("appName") String appName){
         if(appName.equals("order")){
-            return orderClient.getServerConfg();
+            serverConfig = orderClient.getServerConfg();
+            serverConfig.setLocal("remote");
+            return serverConfig;
         }
+        serverConfig.setLocal("local");
         return serverConfig;
     }
 
