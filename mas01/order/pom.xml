@@ -10,9 +10,9 @@
     </parent>
     <groupId>com.psc.cloud</groupId>
     <artifactId>order</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>order Application</name>
-    <description>order Application</description>
+    <version>0.1</version>
+    <name>order</name>
+    <description>order</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -79,6 +79,13 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
             </plugin>
         </plugins>
     </build>
