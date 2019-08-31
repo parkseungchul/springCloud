@@ -30,8 +30,11 @@ public class ConfigController {
     @GetMapping("/svrConf/{appName}")
     public ServerConfig getServerConfig(@PathVariable("appName") String appName){
         if(appName.equals("work")){
-            return workClient.getServerConfg();
+            serverConfig = workClient.getServerConfg();
+            serverConfig.setLocal("remote");
+            return serverConfig;
         }
+        serverConfig.setLocal("local");
         return serverConfig;
     }
 
