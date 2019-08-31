@@ -22,10 +22,9 @@ public class ServerConfig{
     @Value("${spring.application.name}")
     private String appName;
 
-    // 바라봐야 하는 서비스(어플리케이션 이름)
+    // 활성화 된 포트
     @Value("${server.port}")
     private String port;
-
 
     // 컴피그 서버에서 가져오는 값
     @Value("${service.name}")
