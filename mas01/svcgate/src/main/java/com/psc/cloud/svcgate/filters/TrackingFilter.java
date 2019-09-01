@@ -47,15 +47,15 @@ public class TrackingFilter extends ZuulFilter {
     public Object run() {
 
         if (isCorrelationIdPresent()) {
-            log.debug("tmx-correlation-id found in tracking filter: {}. ", filterUtils.getCorrelationId());
+            log.debug("===> tmx-correlation-id found in tracking filter: {}. ", filterUtils.getCorrelationId());
         }
         else{
             filterUtils.setCorrelationId(generateCorrelationId());
-            log.debug("tmx-correlation-id generated in tracking filter: {}.", filterUtils.getCorrelationId());
+            log.debug("===> tmx-correlation-id generated in tracking filter: {}.", filterUtils.getCorrelationId());
         }
 
         RequestContext ctx = RequestContext.getCurrentContext();
-        log.debug("Processing incoming request for {}.",  ctx.getRequest().getRequestURI());
+        log.debug("===> Processing incoming request for {}.",  ctx.getRequest().getRequestURI());
         return null;
     }
 }
