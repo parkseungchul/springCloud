@@ -85,6 +85,12 @@
     - work8081.sh
     - work8081.sh   
 
+9/1 
+- Service gateway(zuul) filer 추가
+  - trackingFiler (request uuid) -> tmx-correlation-id
+  - responseFilter (response)
+- order, work
+  - interceptor 추가하여 들어오는 uuid 확인  
   
 # case 환경 변수 전파 
 1. 스프링 컴피그의 설정이 변경 actuator 확인 (재기동)
