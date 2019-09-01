@@ -15,17 +15,17 @@ public class Interceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String tmxCorrelationId = request.getHeader("tmx-correlation-id");
-        log.info("Interceptor > preHandle: tmxCorrelationId [" + tmxCorrelationId + "]");
+        log.info("Interceptor > preHandle: tmxCorrelationId (from service gateway) [" + tmxCorrelationId + "]");
         return true;
     }
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-        log.info("Interceptor > postHandle");
+        //log.info("Interceptor > postHandle");
     }
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object object, Exception arg3) throws Exception {
-        log.info("Interceptor > afterCompletion" );
+        //log.info("Interceptor > afterCompletion" );
     }
 }
