@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/mas01/confsvr/confsvr.iml" filepath="$PROJECT_DIR$/mas01/confsvr/confsvr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mas01/discoverysvr/discoverysvr.iml" filepath="$PROJECT_DIR$/mas01/discoverysvr/discoverysvr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mas01/mas01.iml" filepath="$PROJECT_DIR$/mas01/mas01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mas01/order/order.iml" filepath="$PROJECT_DIR$/mas01/order/order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mas01/svcgate/svcgate.iml" filepath="$PROJECT_DIR$/mas01/svcgate/svcgate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mas01/work/work.iml" filepath="$PROJECT_DIR$/mas01/work/work.iml" />
+    </modules>
+  </component>
+</project>

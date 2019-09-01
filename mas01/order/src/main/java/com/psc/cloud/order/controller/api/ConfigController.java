@@ -2,7 +2,6 @@ package com.psc.cloud.order.controller.api;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
-import com.netflix.zuul.context.RequestContext;
 import com.psc.cloud.order.clients.WorkClient;
 import com.psc.cloud.order.config.ServerConfig;
 import lombok.extern.slf4j.Slf4j;
@@ -11,8 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.servlet.http.HttpServletRequest;
 
 @Slf4j
 @RestController
