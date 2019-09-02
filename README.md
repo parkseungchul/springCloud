@@ -14,3 +14,4 @@
   - eureka 
   - Hystrix feign, fallback
   - zuul
+  - OAuth2
