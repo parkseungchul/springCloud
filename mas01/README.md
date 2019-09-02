@@ -1,5 +1,8 @@
 # server list
 
+- Auth Server (http://localhost:8887)
+  - http://localhost:8887/oauth/token 으로 토큰 발급
+  
 - Config Server (http://localhost:8888)
   - base spring config
   - spring config : github, local file
@@ -36,8 +39,6 @@
   - work: http://localhost:8081/api/circuitBreaker/1 success ( @HystrixCommand )
   - work: http://localhost:8081/api/circuitBreaker/6 circuit breaker ( @HystrixCommand )
   
-  
-# 실수했던 것들과 기억해야 될 것들
 8/22
 - pom.xml 에 dependencyManagement -> spring-cloud-dependencies 추가해줘야 Fetching config from server at : http://localhost:8888 메시지와 함께 컴피그를 바라봄  
 - bootstrap.xml > application.yml 이 먼저 적용
@@ -70,7 +71,6 @@
 - Hystrix thread pool detail configuration
   - http://woowabros.github.io/experience/2017/08/21/hystrix-tunning.html  
 
-
 8/31
 - zuul server 구현
   - zuul sever 도 결국 eureka client 일원임!
@@ -92,22 +92,17 @@
 - order, work
   - interceptor 추가하여 들어오는 uuid 확인  
   
+9/2
+- OAuth2 서버 추가
+  - http://localhost:8887/oauth/token 으로 토큰 발급 (현재 아이디 패스워드 하드코딩) 
+  
 # case 환경 변수 전파 
 1. 스프링 컴피그의 설정이 변경 actuator 확인 (재기동)
 2. http://어플리케이션/actuator/refresh 로 변수 재적용
 - 재적용되는 변수는 반드시 @RefreshScope, @JsonSerialize(json 변환 관련)
 - 사용자 정의 변수만 리플레쉬를 사용할 수 있다. 디비정보는 될까? 되면 안되겠지 사용자 정의 변수를 디비연결 정보에 넣고 변경한다면...? 글쎄다 필요한 기능일까?
 
-# 해야 할 것들
-8/22
-- 컴피그 서버에 설정이 변경되었을 경우 어떤 전략으로 변경된 컴피그를 어플리케이션 서비스에 전달할 것인지 확인 필요.(8/23 완료)
-- 추가된 코드에 대한 테스트 케이스와 자세한 설명을 볼수 있게 만들어야 함
 
-8/23
-- 컴피그 서버가 재기동 없이 변수를 어떻게 변경하나요?
-
-8/31
-- 전체 서비스에 대하여 이중화 해야지... 휴
 
 
 reference
