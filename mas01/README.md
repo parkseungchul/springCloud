@@ -1,7 +1,48 @@
 # server list
 
 - Auth Server (http://localhost:8887)
-  - http://localhost:8887/oauth/token 으로 토큰 발급
+  - Request (http://localhost:8887/oauth/token)
+    - Header
+      - Username: eagleeye       (Auth2Config.java)
+      - Password: thisissecret   (Auth2Config.java)
+    - Parameter
+      - grant_type: password  (Auth2Config.java)
+      - scope: webclient      (Auth2Config.java)
+      - username: kyj         (WebSecurityConfigurer.java)
+      - password: password    (WebSecurityConfigurer.java)
+  - Response      
+    - "access_token": "bf4773ba-bc7d-4c2d-b055-6aad52050883",
+    - "token_type": "bearer",
+    - "refresh_token": "cc3b8a11-8079-4bee-9aef-3b9ef5693e33",
+    - "expires_in": 43199,
+    - "scope": "webclient"
+    
+  - Request (http://localhost:8887/user)
+    - Header
+      - Authorization => Bearer bf4773ba-bc7d-4c2d-b055-6aad52050883
+  - Response 
+<pre><code>{ 
+   "user":{ 
+      "password":null,
+      "username":"psc",
+      "authorities":[ 
+         { 
+            "authority":"ROLE_ADMIN"
+         },
+         { 
+            "authority":"ROLE_USER"
+         }
+      ],
+      "accountNonExpired":true,
+      "accountNonLocked":true,
+      "credentialsNonExpired":true,
+      "enabled":true
+   },
+   "authorities":[ 
+      "ROLE_ADMIN",
+      "ROLE_USER"
+   ]
+}</code></pre>  
   
 - Config Server (http://localhost:8888)
   - base spring config
