@@ -43,6 +43,8 @@
       "ROLE_USER"
    ]
 }</code></pre>  
+  - Request Protect Service (http://) 
+
   
 - Config Server (http://localhost:8888)
   - base spring config

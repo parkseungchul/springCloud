@@ -35,9 +35,9 @@
 		<!--appender-ref ref="fileAppender" /-->
 	</logger>
 
-<root level="error">
-	<appender-ref ref="fileAppender" />
-	<!--appender-ref ref="consoleAppender" /-->
+<root level="info">
+	<appender-ref ref="consoleAppender" />
+	<!--appender-ref ref="fileAppender" /-->
 </root>
 
 </configuration>
