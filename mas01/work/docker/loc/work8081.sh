@@ -1,2 +1,2 @@
-#!/usr/bin/env bash
-java -jar ../../target/work-0.1.jar --server.port=8081
+cd ./mas01/work/target
+java -jar work-0.1.jar --server.port=8081
