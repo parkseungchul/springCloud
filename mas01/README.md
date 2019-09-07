@@ -1,6 +1,11 @@
 # server list
 
 - Auth Server (http://localhost:8887)
+
+  - Auth Info (ID, PW, GRANT)
+    - kyj password1 USER
+    - psc password2 USER, ADMIN  
+    
   - Request (http://localhost:8887/oauth/token)
     - Header
       - Username: eagleeye       (Auth2Config.java)
@@ -9,7 +14,8 @@
       - grant_type: password  (Auth2Config.java)
       - scope: webclient      (Auth2Config.java)
       - username: kyj         (WebSecurityConfigurer.java)
-      - password: password    (WebSecurityConfigurer.java)
+      - password: password1    (WebSecurityConfigurer.java)
+      
   - Response      
     - "access_token": "bf4773ba-bc7d-4c2d-b055-6aad52050883",
     - "token_type": "bearer",
@@ -43,7 +49,6 @@
       "ROLE_USER"
    ]
 }</code></pre>  
-  - Request Protect Service (http://) 
 
   
 - Config Server (http://localhost:8888)
@@ -66,7 +71,7 @@
     - http://localhost:8880/actuator/refresh (변경 변수 적용)
     - http://localhost:8880/loc/order/api (변경된 경로 호출)
    
-- Application (http://localhost:8080 / 8090 )
+- Application Order(http://localhost:8080 / 8090 )
   - order application
   - http://localhost:8080/actuator/refresh  환경변수 재로딩
   - order(local): http://localhost:8080/api/svrConf/order (로컬 변수)
@@ -74,7 +79,7 @@
   - order: http://localhost:8080/api/circuitBreaker/1 success  ( @HystrixCommand )
   - order: http://localhost:8080/api/circuitBreaker/6 fallback ( @HystrixCommand )
       
-- Application (http://localhost:8081 8081 / 8091 )
+- Application Work (http://localhost:8081 8081 / 8091 )
   - application work     
   - http://localhost:8081/actuator/refresh  환경변수 재로딩  
   - work(local): http://localhost:8081/api/svrConf/work (로컬변수)
@@ -82,6 +87,13 @@
   - work: http://localhost:8081/api/circuitBreaker/1 success ( @HystrixCommand )
   - work: http://localhost:8081/api/circuitBreaker/6 circuit breaker ( @HystrixCommand )
   
+- Application Protect (http://localhost:8081 8082 / 8092 )
+  - application protect
+  - http://localhost:8082/api (permit all)       
+  - http://localhost:8082/actuator (permit all) 
+  - http://localhost:8082/api/admin (admin)
+  - http://localhost:8082/api/user (user)
+   
 8/22
 - pom.xml 에 dependencyManagement -> spring-cloud-dependencies 추가해줘야 Fetching config from server at : http://localhost:8888 메시지와 함께 컴피그를 바라봄  
 - bootstrap.xml > application.yml 이 먼저 적용
@@ -138,6 +150,11 @@
 9/2
 - OAuth2 서버 추가
   - http://localhost:8887/oauth/token 으로 토큰 발급 (현재 아이디 패스워드 하드코딩) 
+  
+9/8
+- protect 서버 추가
+  - add zuul 
+  - add eureka   
   
 # case 환경 변수 전파 
 1. 스프링 컴피그의 설정이 변경 actuator 확인 (재기동)
