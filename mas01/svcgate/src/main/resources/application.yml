@@ -15,6 +15,7 @@ zuul:
     order: /order/**
     work: /work/**
     protect: /protect/**
+    protect2: /protect2/**
   sensitive-headers: Cookie, Set-Cookie
 hystrix:
   command:
