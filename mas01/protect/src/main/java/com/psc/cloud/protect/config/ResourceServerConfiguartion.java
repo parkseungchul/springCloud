@@ -19,8 +19,12 @@ public class ResourceServerConfiguartion extends ResourceServerConfigurerAdapter
                 .authorizeRequests()
 
                 .antMatchers(HttpMethod.GET, "/actuator")
+                .anonymous()
+                .antMatchers(HttpMethod.GET, "/actuator")
                 .permitAll()
 
+                .antMatchers(HttpMethod.GET, "/api")
+                .anonymous()
                 .antMatchers(HttpMethod.GET, "/api")
                 .permitAll()
 
@@ -28,6 +32,7 @@ public class ResourceServerConfiguartion extends ResourceServerConfigurerAdapter
                 .hasRole("ADMIN")
                 .anyRequest()
                 .authenticated()
+
                 .antMatchers(HttpMethod.GET, "/api/user")
                 .hasAnyRole("USER", "ADMIN")
                 .anyRequest()
