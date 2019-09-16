@@ -1,13 +1,21 @@
 package com.psc.cloud.svcgate.utils;
 
 import com.netflix.zuul.context.RequestContext;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.tomcat.util.http.parser.Authorization;
 import org.springframework.stereotype.Component;
 
+import java.util.Enumeration;
+
+@Slf4j
 @Component
 public class FilterUtils {
 
     public static final String CORRELATION_ID = "tmx-correlation-id";
-    public static final String AUTH_TOKEN     = "tmx-auth-token";
+    //public static final String AUTH_TOKEN     = "tmx-auth-token";
+    public static final String AUTH_TOKEN     = "Authorization";
+
+
     public static final String USER_ID        = "tmx-user-id";
     public static final String ORG_ID         = "tmx-org-id";
     public static final String PRE_FILTER_TYPE = "pre";
@@ -62,6 +70,7 @@ public class FilterUtils {
 
     public final String getAuthToken(){
         RequestContext ctx = RequestContext.getCurrentContext();
+        Enumeration<String>  eum = ctx.getRequest().getAttributeNames();
         return ctx.getRequest().getHeader(AUTH_TOKEN);
     }
 

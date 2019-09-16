@@ -79,7 +79,7 @@
   - order: http://localhost:8080/api/circuitBreaker/1 success  ( @HystrixCommand )
   - order: http://localhost:8080/api/circuitBreaker/6 fallback ( @HystrixCommand )
       
-- Application Work (http://localhost:8081 8081 / 8091 )
+- Application Work (http://localhost:8081 / 8091 )
   - application work     
   - http://localhost:8081/actuator/refresh  환경변수 재로딩  
   - work(local): http://localhost:8081/api/svrConf/work (로컬변수)
@@ -87,13 +87,23 @@
   - work: http://localhost:8081/api/circuitBreaker/1 success ( @HystrixCommand )
   - work: http://localhost:8081/api/circuitBreaker/6 circuit breaker ( @HystrixCommand )
   
-- Application Protect (http://localhost:8081 8082 / 8092 )
+- Application Protect (http://localhost:8082 / 8092 )
   - application protect
   - http://localhost:8082/api (permit all)       
   - http://localhost:8082/actuator (permit all) 
   - http://localhost:8082/api/admin (admin)
   - http://localhost:8082/api/user (user)
-   
+  - http://localhost:8082/api/protect2 (permit all, feign call)
+  
+- Application Protect2 (http://localhost:8083 / 8093 )
+  - application protect
+  - http://localhost:8083/api (permit all)       
+  - http://localhost:8083/actuator (permit all) 
+  - http://localhost:8083/api/admin (admin)
+  - http://localhost:8083/api/user (user)
+  - http://localhost:8083/api/protect2 (permit all)
+          
+
 8/22
 - pom.xml 에 dependencyManagement -> spring-cloud-dependencies 추가해줘야 Fetching config from server at : http://localhost:8888 메시지와 함께 컴피그를 바라봄  
 - bootstrap.xml > application.yml 이 먼저 적용
@@ -155,6 +165,12 @@
 - protect 서버 추가
   - add zuul 
   - add eureka   
+  
+9/16 
+- protect OAuth2, JWT 추가
+- protect2 추가
+- protect -> protect2 Feign 으로 호출 
+   
   
 # case 환경 변수 전파 
 1. 스프링 컴피그의 설정이 변경 actuator 확인 (재기동)

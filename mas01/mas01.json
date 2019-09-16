@@ -1,11 +1,11 @@
 {
-  "front-version": "2.20.0",
+  "front-version": "2.21.1",
   "version": 3,
   "nodes": [
     {
       "type": "Project",
       "id": "c74b8e54-c015-457c-8ae0-88d9402071d8",
-      "lastModified": "2019-09-08T00:26:16.286+09:00",
+      "lastModified": "2019-09-16T19:16:28.368+09:00",
       "name": "MAS01"
     },
     {
@@ -428,13 +428,56 @@
         "path": "/api/admin"
       },
       "id": "77e34c4c-cb7b-4a73-a066-11a29b176b74",
-      "lastModified": "2019-09-08T00:04:10.130+09:00",
+      "lastModified": "2019-09-16T19:09:54.312+09:00",
       "name": "admin /api/admin",
       "headers": [
         {
           "enabled": true,
           "name": "Authorization",
-          "value": "Bearer a7dc8ef8-47d4-416b-a134-bd5941a0b8cc"
+          "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm90ZWN0SWQiOiJwc2NQU0MiLCJ1c2VyX25hbWUiOiJwc2MiLCJzY29wZSI6WyJ3ZWJjbGllbnQiXSwiZXhwIjoxNTY4NjYyNzg2LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIiwiUk9MRV9VU0VSIl0sImp0aSI6IjMyYjFhYWQ2LTYzNzAtNDgzZS05MzRmLTNhYTc2OGJmMDE5YSIsImNsaWVudF9pZCI6ImVhZ2xlZXllIn0.-hYl6fPN7l2tdHBkUy2I_RzNV8deQtTBHP-PxmTDO-Y"
+        }
+      ],
+      "metaInfo": {
+        "ownerId": "github|1298414"
+      },
+      "parentId": "20ff6667-730e-4952-a187-d54b376d0730"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8082",
+        "path": "/api/protect2"
+      },
+      "id": "f0c4a032-74fd-4587-82cd-c4845da081f8",
+      "lastModified": "2019-09-16T19:10:55.072+09:00",
+      "name": "admin /api/protect2",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm90ZWN0SWQiOiJwc2NQU0MiLCJ1c2VyX25hbWUiOiJwc2MiLCJzY29wZSI6WyJ3ZWJjbGllbnQiXSwiZXhwIjoxNTY4NjYyNzg2LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIiwiUk9MRV9VU0VSIl0sImp0aSI6IjMyYjFhYWQ2LTYzNzAtNDgzZS05MzRmLTNhYTc2OGJmMDE5YSIsImNsaWVudF9pZCI6ImVhZ2xlZXllIn0.-hYl6fPN7l2tdHBkUy2I_RzNV8deQtTBHP-PxmTDO-Y"
         }
       ],
       "metaInfo": {
@@ -514,9 +557,15 @@
         "path": "/actuator"
       },
       "id": "51941974-c1a2-49c5-9923-f98ffd8072b8",
-      "lastModified": "2019-09-08T00:15:28.062+09:00",
+      "lastModified": "2019-09-16T11:17:01.161+09:00",
       "name": "permit /actuator",
-      "headers": [],
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer 5e514e12-36a4-4252-a06d-aa2c8f54e68a"
+        }
+      ],
       "metaInfo": {
         "ownerId": "github|1298414"
       },
@@ -551,13 +600,13 @@
         "path": "/api"
       },
       "id": "1b096feb-7ea4-41b3-8302-071364dc640e",
-      "lastModified": "2019-09-08T00:15:36.003+09:00",
+      "lastModified": "2019-09-16T11:01:12.992+09:00",
       "name": "permit /api",
       "headers": [
         {
           "enabled": true,
           "name": "Authorization",
-          "value": "Bearer a7dc8ef8-47d4-416b-a134-bd5941a0b8cc"
+          "value": "Bearer 5e514e12-36a4-4252-a06d-aa2c8f54e68a"
         }
       ],
       "metaInfo": {
@@ -650,6 +699,56 @@
         "ownerId": "github|1298414"
       },
       "parentId": "20ff6667-730e-4952-a187-d54b376d0730"
+    },
+    {
+      "type": "Service",
+      "id": "f39cdd81-ff04-45ef-b094-b0dd53501f6b",
+      "lastModified": "2019-09-16T19:12:05.877+09:00",
+      "name": "Application Protent2",
+      "parentId": "c74b8e54-c015-457c-8ae0-88d9402071d8"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8083",
+        "path": "/api/protect2"
+      },
+      "id": "50f5a50d-5bee-4baa-8092-cf5bfb54376d",
+      "lastModified": "2019-09-16T19:16:28.368+09:00",
+      "name": "admin /api/protect2",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm90ZWN0SWQiOiJwc2NQU0MiLCJ1c2VyX25hbWUiOiJwc2MiLCJzY29wZSI6WyJ3ZWJjbGllbnQiXSwiZXhwIjoxNTY4NjYyNzg2LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIiwiUk9MRV9VU0VSIl0sImp0aSI6IjMyYjFhYWQ2LTYzNzAtNDgzZS05MzRmLTNhYTc2OGJmMDE5YSIsImNsaWVudF9pZCI6ImVhZ2xlZXllIn0.-hYl6fPN7l2tdHBkUy2I_RzNV8deQtTBHP-PxmTDO-Y"
+        }
+      ],
+      "metaInfo": {
+        "ownerId": "github|1298414"
+      },
+      "parentId": "f39cdd81-ff04-45ef-b094-b0dd53501f6b"
     },
     {
       "type": "Service",
@@ -898,10 +997,9 @@
       "type": "Scenario",
       "description": "",
       "id": "84acab0c-5d0e-48ef-a5b0-f568f5952183",
-      "lastModified": "2019-09-08T00:02:23.747+09:00",
+      "lastModified": "2019-09-16T10:24:04.986+09:00",
       "name": "토큰 인증",
       "requestOrder": [
-        "1. auth",
         "2. access service",
         "1. auth (admin)",
         "1. auth (user)"
@@ -938,13 +1036,13 @@
         "path": "/api"
       },
       "id": "92db6b2f-e182-49d9-af9e-15e7c469bbd6",
-      "lastModified": "2019-09-07T22:58:00.422+09:00",
+      "lastModified": "2019-09-16T15:11:47.416+09:00",
       "name": "2. access service",
       "headers": [
         {
           "enabled": true,
           "name": "Authorization",
-          "value": "Bearer a7dc8ef8-47d4-416b-a134-bd5941a0b8cc"
+          "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvcmdhbml6YXRpb25JZCI6InBzYyIsInVzZXJfbmFtZSI6InBzYyIsInNjb3BlIjpbIndlYmNsaWVudCJdLCJleHAiOjE1Njg2NTc0NDUsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwianRpIjoiNmRmMzM2NjQtNzJkMC00ZTg5LWFmNTQtZTI4MGMyYWVhMjBhIiwiY2xpZW50X2lkIjoiZWFnbGVleWUifQ.eUjd1-UolvkW40UYgt9RCksSgQB-7PTcyWfyY-SWDQ8"
         }
       ],
       "metaInfo": {
@@ -1146,7 +1244,7 @@
         "path": "/oauth/token"
       },
       "id": "8890d90c-a492-48d3-9fa3-cc1ae7824ac2",
-      "lastModified": "2019-09-02T18:56:38.381+09:00",
+      "lastModified": "2019-09-16T10:57:27.172+09:00",
       "name": "auth",
       "headers": [
         {
@@ -1212,13 +1310,13 @@
         "path": "/user"
       },
       "id": "bf834b39-8a38-41dd-8e2e-63045bb87d41",
-      "lastModified": "2019-09-07T14:57:47.277+09:00",
+      "lastModified": "2019-09-16T10:57:42.393+09:00",
       "name": "user",
       "headers": [
         {
           "enabled": true,
           "name": "Authorization",
-          "value": "Bearer a7dc8ef8-47d4-416b-a134-bd5941a0b8cc"
+          "value": "Bearer 5e514e12-36a4-4252-a06d-aa2c8f54e68a"
         }
       ],
       "metaInfo": {
@@ -1741,6 +1839,49 @@
       "lastModified": "2019-09-08T00:26:16.287+09:00",
       "name": "permit all protect/api",
       "headers": [],
+      "metaInfo": {
+        "ownerId": "github|1298414"
+      },
+      "parentId": "707865f4-be03-4ef1-a37a-9b6ddec9c5ef"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8880",
+        "path": "/protect/api/admin"
+      },
+      "id": "b42f9f7b-8806-47a0-bc07-9272d633cdb9",
+      "lastModified": "2019-09-16T19:06:52.094+09:00",
+      "name": "protect/api/admin",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm90ZWN0SWQiOiJwc2NQU0MiLCJ1c2VyX25hbWUiOiJwc2MiLCJzY29wZSI6WyJ3ZWJjbGllbnQiXSwiZXhwIjoxNTY4NjYyNzg2LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIiwiUk9MRV9VU0VSIl0sImp0aSI6IjMyYjFhYWQ2LTYzNzAtNDgzZS05MzRmLTNhYTc2OGJmMDE5YSIsImNsaWVudF9pZCI6ImVhZ2xlZXllIn0.-hYl6fPN7l2tdHBkUy2I_RzNV8deQtTBHP-PxmTDO-Y"
+        }
+      ],
       "metaInfo": {
         "ownerId": "github|1298414"
       },
