@@ -1,0 +1,15 @@
+server:
+  port: 8083
+management:
+  health:
+    diskspace:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:8887/user
