@@ -13,9 +13,9 @@ public class ProtectContoller {
     @Autowired
     Protect2Client protect2Client;
 
-    @RequestMapping("")
+    @RequestMapping(value={"", "/protect"})
     public String getProtect(){
-        return "this protect resource";
+        return "protect";
     }
 
     @GetMapping("/protect2")
