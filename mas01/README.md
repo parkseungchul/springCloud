@@ -171,15 +171,10 @@
 - protect2 추가
 - protect -> protect2 Feign 으로 호출 
    
+9/18
+- protect 에서 헤더 정보를 전달하여 protect2 에서도 권한이 적용되도록 변경    
+   
   
-# case 환경 변수 전파 
-1. 스프링 컴피그의 설정이 변경 actuator 확인 (재기동)
-2. http://어플리케이션/actuator/refresh 로 변수 재적용
-- 재적용되는 변수는 반드시 @RefreshScope, @JsonSerialize(json 변환 관련)
-- 사용자 정의 변수만 리플레쉬를 사용할 수 있다. 디비정보는 될까? 되면 안되겠지 사용자 정의 변수를 디비연결 정보에 넣고 변경한다면...? 글쎄다 필요한 기능일까?
-
-
-
-
 reference
  - https://www.baeldung.com/spring-boot-change-port
+ - http://woowabros.github.io/experience/2019/05/29/feign.html
