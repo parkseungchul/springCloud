@@ -16,6 +16,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .ignoring()
                 .antMatchers("/actuator")
                 .antMatchers("/api")
+                .antMatchers("/api/protect")
                 .antMatchers("/api/protect2");
 
 
