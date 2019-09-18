@@ -10,19 +10,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class AdminController {
 
-
     @Autowired
     private Protect2Client protect2Client;
-
 
     @GetMapping("/admin")
     public String getAdmin(){
         return "admin service";
     }
 
-    @GetMapping("/protect2")
-    public String getProtect2(){
-        return protect2Client.getProtect2();
+    @GetMapping("/protect2/admin")
+    public String getProtect2Admin(){
+
+        return "admin";
+        //return protect2Client.getProtect2Admin();
     }
+
+
 
 }

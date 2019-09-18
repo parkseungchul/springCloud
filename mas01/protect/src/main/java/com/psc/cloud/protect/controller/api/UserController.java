@@ -12,4 +12,11 @@ public class UserController {
     public String getUser(){
         return "user service";
     }
+
+    @GetMapping("/protect2/user")
+    public String getProtect2User(){
+
+        return "user";
+        //return protect2Client.getProtect2User();
+    }
 }
