@@ -10,6 +10,11 @@ public class AdminController {
 
     @GetMapping("/admin")
     public String getAdmin(){
-        return "admin service";
+        return "protect2 admin";
+    }
+
+    @RequestMapping("/protect2/admin")
+    public String getProtect2Admin(){
+        return "protect2 admin";
     }
 }

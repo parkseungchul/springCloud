@@ -7,13 +7,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class ProtectContoller {
 
-    @RequestMapping("")
+    @RequestMapping(value={"", "/protect2"})
     public String getProtect(){
-        return "this protect2 resource";
+        return "protect2";
     }
 
-    @RequestMapping("/protect2")
-    public String getProtect2(){
-        return "FeignClient protect2";
-    }
+
+
+
+
+
 }
