@@ -15,16 +15,19 @@ public class AdminController {
 
     @GetMapping("/admin")
     public String getAdmin(){
-        return "admin service";
+        return "protect admin";
     }
 
     @GetMapping("/protect2/admin")
     public String getProtect2Admin(){
 
-        return "admin";
-        //return protect2Client.getProtect2Admin();
+        return protect2Client.getProtect2Admin();
     }
 
+    @GetMapping("/protect2/admin2user")
+    public String getProtect2Admin2User(){
+        return protect2Client.getProtect2User();
+    }
 
 
 }
