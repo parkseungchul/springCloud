@@ -1,5 +1,7 @@
 # server list
 
+- ![image](./mas01.PNG)
+
 - Auth Server (http://localhost:8887)
 
   - Auth Info (ID, PW, GRANT)
