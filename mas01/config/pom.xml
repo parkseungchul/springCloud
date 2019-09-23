@@ -10,10 +10,10 @@
     </parent>
 
     <groupId>com.psc.cloud</groupId>
-    <artifactId>confsvr</artifactId>
+    <artifactId>config</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Configuration Server</name>
-    <description>Configuration Server</description>
+    <name>mas01 config</name>
+    <description>mas01 config</description>
 
     <properties>
         <java.version>1.8</java.version>

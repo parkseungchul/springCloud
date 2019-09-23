@@ -11,8 +11,8 @@
     <groupId>com.psc.cloud</groupId>
     <artifactId>work</artifactId>
     <version>0.1</version>
-    <name>work</name>
-    <description>work</description>
+    <name>mas01 APP work</name>
+    <description>mas01 APP work</description>
 
     <properties>
         <java.version>1.8</java.version>

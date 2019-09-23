@@ -11,8 +11,8 @@
     <groupId>com.psc.cloud</groupId>
     <artifactId>auth</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>auth</name>
-    <description>Demo project for Spring Boot</description>
+    <name>mas01 auth</name>
+    <description>mas01 auth</description>
 
     <properties>
         <java.version>1.8</java.version>

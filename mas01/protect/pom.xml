@@ -11,8 +11,8 @@
     <groupId>com.psc.cloud</groupId>
     <artifactId>protect</artifactId>
     <version>0.1</version>
-    <name>protect</name>
-    <description>protect</description>
+    <name>mas01 APP protect</name>
+    <description>mas01 APP protect</description>
 
     <properties>
         <java.version>1.8</java.version>

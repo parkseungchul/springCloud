@@ -11,8 +11,8 @@
     <groupId>com.psc.cloud</groupId>
     <artifactId>protect2</artifactId>
     <version>0.1</version>
-    <name>protect2</name>
-    <description>Demo project for Spring Boot</description>
+    <name>mas01 APP protect2</name>
+    <description>mas01 APP protect2</description>
 
     <properties>
         <java.version>1.8</java.version>

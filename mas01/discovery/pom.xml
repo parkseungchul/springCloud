@@ -10,10 +10,10 @@
     </parent>
 
     <groupId>com.psc.cloud</groupId>
-    <artifactId>discoverysvr</artifactId>
+    <artifactId>discovery</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>mas1 discovery</name>
-    <description>mas1 discovery</description>
+    <name>mas01 discovery</name>
+    <description>mas01 discovery</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -61,7 +61,6 @@
     </dependencyManagement>
 
     <build>
-        <finalName>discovery</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
