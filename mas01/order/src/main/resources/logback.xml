@@ -36,8 +36,8 @@
 	</logger>
 
 <root level="error">
-	<appender-ref ref="fileAppender" />
-	<!--appender-ref ref="consoleAppender" /-->
+	<appender-ref ref="consoleAppender" />
+	<!--appender-ref ref="fileAppender" /-->
 </root>
 
 </configuration>
