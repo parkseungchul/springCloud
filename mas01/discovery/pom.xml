@@ -12,8 +12,8 @@
     <groupId>com.psc.cloud</groupId>
     <artifactId>discoverysvr</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Discovery Server</name>
-    <description>Discovery Server</description>
+    <name>mas1 discovery</name>
+    <description>mas1 discovery</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -61,6 +61,7 @@
     </dependencyManagement>
 
     <build>
+        <finalName>discovery</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
