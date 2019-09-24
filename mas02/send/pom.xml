@@ -11,8 +11,8 @@
     <groupId>com.psc.cloud</groupId>
     <artifactId>send</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>send</name>
-    <description>Demo project for Spring Boot</description>
+    <name>mas02 APP send</name>
+    <description>mas02 APP send</description>
 
     <properties>
         <java.version>1.8</java.version>
