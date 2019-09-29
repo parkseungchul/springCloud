@@ -18,3 +18,5 @@
   - https://hyu-my.sharepoint.com/:p:/g/personal/pol1501_hanyang_ac_kr/EXDGqFtZed1PnB2dYLC-QogBCfn2V8UADxlIUxKX0bvDRg?e=49cyAR
   - ![image](./mas01/mas01.PNG)
   
+- [mas01A](https://github.com/parkseungchul/springCloud/tree/master/mas01A)
+  - 마이크로서비스 업무 구현 (mas01 고도화)
