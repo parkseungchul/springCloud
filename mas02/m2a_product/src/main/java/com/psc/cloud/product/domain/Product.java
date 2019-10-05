@@ -24,9 +24,6 @@ public class Product {
 
     private String enable;
     private String description;
-
-
-
 }
 
 

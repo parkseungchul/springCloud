@@ -33,10 +33,8 @@ public class DiscoveryApplication  implements CommandLineRunner, ApplicationList
 
     @Override
     public void run(String... args) throws Exception {
-
         Map<String,String> map = eurekaClientConfigBean.getServiceUrl();
         log.debug(map.toString());
-
     }
 
     @Override
