@@ -4,6 +4,10 @@ spring:
 env:
   init: true
 
+server:
+  port: 11001
+
+
 eureka:
   instance:
     prefer-ip-address: true

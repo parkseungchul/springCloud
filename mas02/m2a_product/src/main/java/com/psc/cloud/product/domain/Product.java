@@ -11,11 +11,20 @@ import javax.persistence.*;
 @Setter
 @Entity
 @Table(name="tbl_product")
-@AllArgsConstructor
 public class Product {
 
     public Product(){
 
+    }
+
+    public Product(long codeId, String productName, boolean enabled, String description){
+        Code code = new Code();
+        code.setCodeId(codeId);
+
+        this.code = code;
+        this.productName = productName;
+        this.enabled = enabled;
+        this.description = description;
     }
 
     @Id

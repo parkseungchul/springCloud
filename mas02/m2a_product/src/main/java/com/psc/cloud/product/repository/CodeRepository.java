@@ -5,4 +5,6 @@ import com.psc.cloud.product.domain.Product;
 import org.springframework.data.repository.CrudRepository;
 
 public interface CodeRepository extends CrudRepository<Code, Long>{
+
+    Code findByCodeName(String codeName);
 }
