@@ -28,6 +28,11 @@ public class DiscoveryApplication  implements CommandLineRunner, ApplicationList
     EurekaClientConfigBean eurekaClientConfigBean;
 
     public static void main(String[] args) {
+
+        for (String arg: args){
+            log.debug("===>"+arg);
+        }
+
         SpringApplication.run(DiscoveryApplication.class, args);
     }
 

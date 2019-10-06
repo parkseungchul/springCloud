@@ -1,6 +1,8 @@
 spring:
   application:
     name: product
+env:
+  init: true
 
 eureka:
   instance:
