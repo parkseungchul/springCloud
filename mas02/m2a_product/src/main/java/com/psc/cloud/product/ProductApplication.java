@@ -18,9 +18,6 @@ import org.springframework.context.event.EventListener;
 @EnableCircuitBreaker
 public class ProductApplication {
 
-    @Autowired
-    ServerProperties serverProperties;
-
     public static void main(String[] args) {
         SpringApplication.run(ProductApplication.class, args);
     }

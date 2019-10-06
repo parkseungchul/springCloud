@@ -1,5 +1,7 @@
 package com.psc.cloud.product.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,20 +11,27 @@ import javax.persistence.*;
 @Setter
 @Entity
 @Table(name="tbl_product")
+@AllArgsConstructor
 public class Product {
+
+    public Product(){
+
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="product_id")
     private Long productId;
 
-    @Column(name="code_id")
-    private Long codeId;
+    @ManyToOne(targetEntity = Code.class, fetch=FetchType.LAZY)
+    @JoinColumn(name = "codeId")
+    @JsonIgnore
+    private Code code;
 
     @Column(name="product_name")
     private String productName;
 
-    private String enable;
+    private boolean enabled;
     private String description;
 }
 

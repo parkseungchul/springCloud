@@ -13,5 +13,5 @@ import org.springframework.stereotype.Component;
 public class ServerProperties {
 
     @Value("${env.init}")
-    private String init;
+    private boolean init;
 }

@@ -24,11 +24,17 @@
   
 ## setup 
 <code>
-# docker run -d -p 3000:3306 -v wp-db-vol:/docker/mysql/mas02db -e MYSQL_ROOT_PASSWORD=password --name mas02db mysql:5.7 --character-set-server=utf8 --collation-server=utf8_unicode_ci  
-# docker exec -it mas02db bash
-# mysql -u root -p
-# create schema mas02db;
-# create user 'user01'@'%' identified by 'user01';
-# grant all privileges on mas02db.* to 'user01'@'%';
-# commit;
+docker run -d -p 3000:3306 -v wp-db-vol:/docker/mysql/mas02db -e MYSQL_ROOT_PASSWORD=password --name mas02db mysql:5.7 --character-set-server=utf8 --collation-server=utf8_unicode_ci  
+
+docker exec -it mas02db bash
+
+mysql -u root -p
+
+create schema mas02db;
+
+create user 'user01'@'%' identified by 'user01';
+
+grant all privileges on mas02db.* to 'user01'@'%';
+
+commit;
 </code>
