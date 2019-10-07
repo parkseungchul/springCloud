@@ -30,6 +30,19 @@ public class InitData {
         productRepository.deleteAll();
     }
 
+    @Transactional
+    public void deleteAll(){
+        productDeleteAll();
+        codeDeleteAll();
+    }
+
+    @Transactional
+    public void saveAll(){
+        codeSaveLv1();
+        codeSaveLv2();
+        productSaveLv1();
+    }
+
     public List<Code> codeDataLv1(){
         List<Code> list = new ArrayList<Code>();
         list.add(new Code(0L, "drink", true,"마실 것"));
