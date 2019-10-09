@@ -1,7 +1,9 @@
 package com.psc.cloud.product.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -9,9 +11,15 @@ import javax.persistence.*;
 @Setter
 @Entity
 @Table(name="tbl_code")
+@ToString
+@AllArgsConstructor
 public class Code {
 
     public Code(){
+    }
+
+    public Code(Long codeId){
+        this.codeId = codeId;
     }
 
     public Code(Long parentId, String codeName, boolean enabled, String description ){

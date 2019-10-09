@@ -4,9 +4,11 @@ import com.psc.cloud.product.domain.Product;
 import com.psc.cloud.product.repository.ProductRepository;
 import com.psc.cloud.product.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
@@ -14,7 +16,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> list(Product product) {
-        return null;
+        return productRepository.listProduct(product);
     }
 
     @Override
