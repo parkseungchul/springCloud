@@ -1,13 +1,7 @@
-spring:
-  application:
-    name: product
 env:
-  init: true
-
+  init: false
 server:
   port: 11001
-
-
 eureka:
   instance:
     prefer-ip-address: true

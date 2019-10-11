@@ -25,7 +25,9 @@ public class QCode extends EntityPathBase<Code> {
 
     public final StringPath description = createString("description");
 
-    public final StringPath enable = createString("enable");
+    public final BooleanPath enabled = createBoolean("enabled");
+
+    public final NumberPath<Long> parentId = createNumber("parentId", Long.class);
 
     public QCode(String variable) {
         super(Code.class, forVariable(variable));

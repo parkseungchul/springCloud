@@ -33,10 +33,29 @@ public class CustomProductImpl extends QuerydslRepositorySupport implements Cust
                 qCode.description
         );
 
-
         tuple.leftJoin(qCode);
         tuple.on(qProduct.code.codeId.eq(qCode.codeId));
         tuple.where(qProduct.code.codeId.eq(qCode.codeId));
+
+        if(product != null){
+            if(product.getCode() != null){
+                Code code = product.getCode();
+                Long codeId = code.getCodeId();
+                tuple.where(qCode.codeId.eq(codeId));
+            }
+            if(product.getProductId() != null){
+                tuple.where(qProduct.productId.eq(product.getProductId()));
+            }
+            if(product.getProductName() != null){
+                tuple.where(qProduct.productName.like("%"+product.getProductName()+"%"));
+            }
+            if(product.getEnabled() != null){
+                tuple.where(qProduct.enabled.eq(product.getEnabled()));
+            }
+            if(product.getDescription() != null){
+                tuple.where(qProduct.description.like("%"+product.getDescription()+"%"));
+            }
+        }
 
         List<Tuple> list = tuple.fetch();
         List<Product> resultList = new ArrayList<>();

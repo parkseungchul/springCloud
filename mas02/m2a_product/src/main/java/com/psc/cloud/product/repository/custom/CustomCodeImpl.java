@@ -16,6 +16,27 @@ public class CustomCodeImpl extends QuerydslRepositorySupport implements CustomC
         QCode qCode = QCode.code;
         JPQLQuery<Code> query = from(qCode);
         JPQLQuery<Code> jpqlQuery = query.select(qCode);
+
+        if(code != null){
+            if(code.getCodeId() != null){
+                jpqlQuery.where(qCode.codeId.eq(code.getCodeId()));
+            }
+            if(code.getParentId() != null){
+                jpqlQuery.where(qCode.parentId.eq(code.getParentId()));
+            }
+            if(code.getCodeName() != null){
+                jpqlQuery.where(qCode.codeName.like("%"+code.getCodeName()+"%"));
+            }
+            if(code.getEnabled() != null){
+                jpqlQuery.where(qCode.enabled.eq(code.getEnabled()));
+            }
+            if(code.getDescription() != null){
+                jpqlQuery.where(qCode.description.eq(code.getDescription()));
+            }
+        }
+
+
+
         return jpqlQuery.fetch();
     }
 }

@@ -42,7 +42,7 @@ public class Product {
     @Column(name="product_name")
     private String productName;
 
-    private boolean enabled;
+    private Boolean enabled;
     private String description;
 }
 

@@ -40,6 +40,6 @@ public class Code {
     @Column(name="code_name")
     private String codeName;
 
-    private boolean enabled;
+    private Boolean enabled;
     private String description;
 }
