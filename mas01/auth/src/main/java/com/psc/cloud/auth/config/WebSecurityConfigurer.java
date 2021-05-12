@@ -34,4 +34,5 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
                 .and()
                 .withUser("psc").password(encoder.encode("password2")).roles("USER", "ADMIN");
     }
+
 }

@@ -1,1 +1,0 @@
-java -jar ../../target/product-0.1.jar --server.port=12001 -Denv.
